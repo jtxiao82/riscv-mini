@@ -1,4 +1,6 @@
-int add(int a, int b);
+int add(int a, int b) {
+  return a + b;
+}
 
 int main(int argc, char** argv) {
   int res = add(3, 2);
