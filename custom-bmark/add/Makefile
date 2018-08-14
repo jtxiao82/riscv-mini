@@ -1,5 +1,5 @@
-base_dir = $(abspath ..)
-RISCV_PATH = ../../riscv_tool_for_riscv_mini/bin
+base_dir = $(abspath ../../)
+RISCV_PATH = ~/NTHU/Research/Git/riscv_tool_for_riscv_mini/bin
 
 # For custom benchmarks
 RISCV_TEST_DIR     ?= $(base_dir)/riscv-tools-priv1.7/riscv-tests
