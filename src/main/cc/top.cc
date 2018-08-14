@@ -106,6 +106,9 @@ int main(int argc, char** argv) {
   top->io_host_fromhost_valid = 0;
   do {
     tick();
+    #define CYCLE 0
+    if(CYCLE) 
+      cout << "Cycle: " << main_time / 10 << endl;
   } while(!top->io_host_tohost && main_time < timeout);
 
   int retcode = top->io_host_tohost >> 1;

@@ -169,8 +169,10 @@ class Datapath(implicit val p: Parameters) extends Module with CoreParams {
   io.dcache.abort := csr.io.expt
 
   if (p(Trace)) {
-    //printf("PC: %x, INST: %x, REG[%d] <- %x\n", ew_pc, ew_inst,
-    //  Mux(regFile.io.wen, wb_rd_addr, 0.U),
-    //  Mux(regFile.io.wen, regFile.io.wdata, 0.U))
+    when(ew_inst === 16810003.U) { // Print the addi x0, x1, 16 only
+      printf("addi x0, x1, 16. PC: %x, INST: %d, REG[%d] <- %x\n", ew_pc, ew_inst,
+        Mux(regFile.io.wen, wb_rd_addr, 0.U),
+        Mux(regFile.io.wen, regFile.io.wdata, 0.U))
+    }
   }
 }
